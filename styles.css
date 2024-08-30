@@ -1,0 +1,718 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #181456;
+    padding: 30px 50px;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.nav-links a:hover {
+    background-color: #0a296a;
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #181456;
+        display: none;
+        margin-top: 30px;
+
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 5px 0;
+        text-align: left;
+        padding-left: 40px;
+    }
+
+    .nav-links a {
+        width: 100%;
+        display: block;
+    }
+
+    .toggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.toggle {
+    display: none;
+}
+
+.btn {
+
+    background-color: #2a4ec7;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.hero {
+    background: url("/images/bg.png") no-repeat center center/cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-content .btn {
+    background-color: #f39c12;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.hero-content .btn:hover {
+    background-color: #e67e22;
+}
+
+
+/* Shop Section */
+#shop {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.shop-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.shop-container h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+}
+
+.product-card p {
+    font-size: 16px;
+    color: #555;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.product-card .btn {
+    display: inline-block;
+    background-color: #f39c12;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.product-card .btn:hover {
+    background-color: #e67e22;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .shop-container h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .product-card h3 {
+        font-size: 20px;
+    }
+
+    .product-card p {
+        font-size: 14px;
+    }
+
+    .product-card .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .shop-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .product-card h3 {
+        font-size: 18px;
+    }
+
+    .product-card p {
+        font-size: 13px;
+    }
+
+    .product-card .btn {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .shop-container h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+        font-size: 16px;
+    }
+
+    .product-card p {
+        font-size: 12px;
+    }
+
+    .product-card .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Styles for Prices */
+.product-card .price {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .product-card .price {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-card .price {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .product-card .price {
+        font-size: 14px;
+    }
+}
+
+/* General Styles for About Section */
+#about {
+    background-color: #f0f4f8;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-header h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-paragraph {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.about-paragraph p {
+    font-size: 18px;
+    color: #555;
+    margin: 0;
+}
+
+/* Media Queries */
+
+/* Tablets and small laptops */
+@media (max-width: 768px) {
+    .about-header h2 {
+        font-size: 32px;
+    }
+
+    .about-paragraph {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .about-paragraph p {
+        font-size: 16px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+    .about-container {
+        padding: 20px;
+    }
+
+    .about-header h2 {
+        font-size: 28px;
+    }
+
+    .about-paragraph p {
+        font-size: 15px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 400px) {
+    #about {
+        padding: 30px 10px;
+    }
+
+    .about-header h2 {
+        font-size: 24px;
+    }
+
+    .about-paragraph p {
+        font-size: 14px;
+    }
+}
+
+/* General Styles for Testimonials Section */
+#testimonials {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonials-container {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+}
+
+.testimonials-container h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    width: 100%;
+}
+
+.testimonial-card p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.testimonial-card cite {
+    font-size: 16px;
+    color: #777;
+    display: block;
+}
+
+/* Media Queries */
+
+/* Tablets and small laptops */
+@media (max-width: 768px) {
+    .testimonials-container h2 {
+        font-size: 32px;
+    }
+
+    .testimonial-card {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .testimonial-card p {
+        font-size: 16px;
+    }
+
+    .testimonial-card cite {
+        font-size: 14px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+    .testimonials-container h2 {
+        font-size: 28px;
+    }
+
+    .testimonial-card {
+        padding: 10px;
+    }
+
+    .testimonial-card p {
+        font-size: 15px;
+    }
+
+    .testimonial-card cite {
+        font-size: 13px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 400px) {
+    #testimonials {
+        padding: 30px 10px;
+    }
+
+    .testimonials-container h2 {
+        font-size: 24px;
+    }
+
+    .testimonial-card {
+        padding: 10px;
+    }
+
+    .testimonial-card p {
+        font-size: 14px;
+    }
+
+    .testimonial-card cite {
+        font-size: 12px;
+    }
+}
+
+/* General Styles for Contact Us Section */
+#contact {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contact-info, .contact-form {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info h3, .contact-form h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* General Styles for Footer */
+#footer {
+    background-color: #333;
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-info {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    font-size: 16px;
+}
+
+.footer-links, .footer-social {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-links h4, .footer-social h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links li, .footer-social li {
+    margin-bottom: 10px;
+}
+
+.footer-links a, .footer-social a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+.footer-social ul {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-icon {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #444;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* Media Queries */
+
+/* Tablets and small laptops */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info, .footer-links, .footer-social {
+        text-align: center;
+    }
+
+    .footer-social ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+    .contact-container h2 {
+        font-size: 32px;
+    }
+
+    .contact-info p, .contact-info li, .contact-form label, .contact-form input, .contact-form textarea, .contact-form button {
+        font-size: 16px;
+    }
+
+    .footer-info h3, .footer-links h4, .footer-social h4 {
+        font-size: 18px;
+    }
+
+    .footer-info p, .footer-links a, .footer-social a {
+        font-size: 14px;
+    }
+}
